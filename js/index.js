@@ -16,6 +16,7 @@ function addProduct() {
     data: form.serialize(),
     success: function (data) {
       console.log(data)
+      window.dialog.dialog('close')
     },
     error: function (xhr, resp, text) {
       console.log(xhr, resp, text)
@@ -23,14 +24,14 @@ function addProduct() {
         `<p class="form-error">An error occurred while adding a product. Please try again later.</p>`
       )
     },
-    complete: function(xhr, status){
-      console.log(xhr);
+    complete: function(xhr, state){
+      console.log(xhr, state);
     }
   })
 }
 
 $(function () {
-  dialog = $('#add-modal').dialog({
+  window.dialog = $('#add-modal').dialog({
     autoOpen: false,
     height: 700,
     width: 800,
@@ -38,7 +39,7 @@ $(function () {
     buttons: {
       'Add a new product': addProduct,
       Cancel: function () {
-        dialog.dialog('close')
+        window.dialog.dialog('close')
       },
     },
     close: function () {
@@ -46,20 +47,21 @@ $(function () {
     },
   })
 
-  form = dialog.find('form').on('submit', function (event) {
+  form = window.dialog.find('form').on('submit', function (event) {
     event.preventDefault()
-    addUser()
+    addProduct()
   })
 
   $('#modal-open')
     .button()
     .on('click', function () {
-      dialog.dialog('open')
+      window.dialog.dialog('open')
     })
 
   function split(val) {
     return val.split(/,\s*/)
   }
+
   function extractLast(term) {
     return split(term).pop()
   }
