@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="jquery-ui-1.13.2.custom/jquery-ui.min.css" />
+    <script src="jquery-ui-1.13.2.custom/external/jquery/jquery.js"></script>
+    <script src="jquery-ui-1.13.2.custom/jquery-ui.min.js"></script>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Roboto:300,400,600,700;lang=en"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <button id="modal-open">Add a new product</button>
+      <div id="add-modal" class="modal-container">
+        <h2>Add a new product</h2>
+        <form id="form" action="/products/add">
+          <fieldset>
+            <legend>Basic information:</legend>
+            <div class="input">
+              <input
+                placeholder=" "
+                type="text"
+                id="name-ang"
+                name="name-ang"
+              />
+              <label for="name-ang">Product name (eng.)</label>
+            </div>
+            <div class="input">
+              <input placeholder=" " type="text" id="name-pl" name="name-pl" />
+              <label for="name-pl">Product name (pl.)</label>
+            </div>
+            <div class="input">
+              <input placeholder=" " type="text" id="sku" name="sku" /><label
+                for="sku"
+                >SKU</label
+              >
+            </div>
+            <div class="input">
+              <input
+                placeholder=" "
+                type="number"
+                name="price"
+                id="price"
+              /><label for="price">Price</label>
+            </div>
+            <div class="input">
+              <input
+                placeholder=" "
+                type="number"
+                name="quantity"
+                id="quantity"
+              /><label for="quantity">Quantity</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Metadata:</legend>
+            <div class="input">
+              <input
+                placeholder=" "
+                type="text"
+                name="keywords"
+                id="keywords"
+              /><label for="keywords">Keywords</label>
+            </div>
+            <div class="input textarea">
+              <textarea
+                name="description"
+                id="description"
+                cols="30"
+                rows="10"
+                placeholder=" "
+              ></textarea
+              ><label for="description">Description</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Tags:</legend>
+            <div class="input">
+              <input
+                placeholder=" "
+                id="tags"
+                name="tags"
+                title='type "a"'
+              /><label for="tags">Tags</label>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Roboto', serif;
+}
+:root {
+  --black: #000000ff;
+  --oxford-blue: #14213dff;
+  --orange-web: #fca311ff;
+  --platinum: #e5e5e5ff;
+  --white: #ffffffff;
+  --red: #ef233c;
+}
+body {
+  margin: 0;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--orange-web);
+  width: 100vw;
+  height: 100vh;
+}
+
+.ui-dialog {
+  background-color: var(--oxford-blue) !important;
+}
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  max-width: 700px;
+  margin: auto;
+  color: var(--platinum);
+}
+
+.modal-container fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 30px;
+  border-radius: 3px;
+  border-color: var();
+}
+
+.modal-container fieldset legend {
+  font-size: 1.2em;
+}
+
+.modal-container fieldset .input {
+  height: 50px;
+  position: relative;
+}
+.modal-container fieldset .input label {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  user-select: none;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: var(--oxford-blue);
+  line-height: 100%;
+}
+
+.input input:not(:placeholder-shown) ~ label,
+.input input:focus ~ label {
+  top: -6px;
+  font-size: 13px;
+  background-color: var(--orange-web);
+  border-radius: 3px;
+  padding: 1px 3px;
+}
+
+.input textarea:not(:placeholder-shown) ~ label,
+.input textarea:focus ~ label {
+  top: -6px;
+  font-size: 13px;
+  background-color: var(--orange-web);
+  border-radius: 3px;
+  padding: 1px 3px;
+}
+
+.modal-container fieldset .input.textarea {
+  height: 250px;
+}
+.modal-container fieldset .input.textarea textarea {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 15px 20px;
+}
+
+.modal-container fieldset .input input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 5px 20px;
+}
+
+.form-error {
+  color: var(--red);
+}
+
+.ui-button {
+  background-color: var(--oxford-blue) !important;
+  outline: 1px solid var(--oxford-blue);
+  border: none !important;
+  position: relative;
+  transition: all 0.3s ease;
+  color: var(--platinum);
+  height: 50px;
+  z-index: 1;
+}
+
+.ui-button::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  transition: all 0.3s;
+  z-index: -1;
+  background-color: var(--platinum);
+}
+
+.ui-button:hover:before {
+  width: 100%;
+}
+
+.ui-dialog-buttonset .ui-button {
+  outline-color: var(--platinum);
+}
+
+.ui-dialog-titlebar,
+.ui-widget-content {
+  background-color: var(--oxford-blue);
+  border: none;
+}
+.ui-autocomplete {
+  background-color: var(--platinum);
+}
+
+.ui-autocomplete .ui-menu-item:hover .ui-menu-item-wrapper,
+.ui-autocomplete .ui-menu-item:hover,
+.ui-autocomplete .ui-menu-item:focus .ui-menu-item-wrapper,
+.ui-autocomplete .ui-menu-item:focus {
+  background-color: var(--orange-web) !important;
+  border-color: var(--oxford-blue) !important;
+}
